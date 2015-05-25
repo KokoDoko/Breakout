@@ -16,6 +16,8 @@ var score = 0;
 var bricks = [];
 var text = [];
 
+var totalMotion = 0;
+
  window.onload = function() {
     
     // Open game engine
@@ -30,9 +32,11 @@ var text = [];
         
         game.load.image('logo', '/Assets/CDLogo.png');
         game.load.image('platform', '/Assets/Platform.png');
-        game.load.image('brick', '/Assets/Blue_brick.png');
         game.load.image('ball', '/Assets/Ball.png');
-      
+         
+        game.load.image('blauw', '/Assets/Blue_brick.png');
+        game.load.image('rood', '/Assets/Red_brick.png');
+        game.load.image('groen', '/Assets/Green_brick.png');
     }
     
     // Initialize
@@ -60,11 +64,33 @@ var text = [];
         logo.scale.set(0.25 , 0.25);
         
         /** Hero **/
-        hero = new Hero(360, 400);
+        hero = maakEenBalk();
         
-        ball = new Ball(300, 300);
+        ball = maakEenBal();
         
         /** Bricks **/
+        bricks = blokkenMaker();
+       
+        
+        // register for motion updates
+        if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', processMotion, false);
+        }
+    }
+    
+    // Loop / update
+    function update(){
+        
+        updatePlayerMovement();
+        
+        updateBallMovement();
+        
+        checkBrickStatus();
+        
+    }
+    
+    // Brick generator
+    function generateBricks(){
         
         var count = 11;
         var nextRow = 0;
@@ -84,37 +110,29 @@ var text = [];
         }
     }
     
-    // Loop / update
-    function update(){
-        
-        updatePlayerMovement();
-        
-        updateBallMovement();
-        
-        checkBrickStatus();
-        
+    // process motion events
+    function processMotion(evt) {
+        totalMotion -= evt.accelerationIncludingGravity.y;
     }
-    
     
     // Update function for player
     function updatePlayerMovement(){
         
         /** Keyboard movement for Player **/
-        if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
-            
+         beweegBalk();
+        
+        /** Motion control **/
+        if (totalMotion > 0) {
             if(hero.getX() <= (viewWidth - hero.getWidth())){
-                
-                hero.move(1);
+                hero.move(totalMotion*2);
             }
-            
-        }else if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-            
-            
+        } else if (totalMotion < 0) {
             if(hero.getX() >= 0){
                 
-                hero.move(-1);
+                hero.move(totalMotion*2);
             }
         }
+        totalMotion = 0;
     }
     
     function updateBallMovement(){
@@ -189,9 +207,6 @@ var text = [];
     
     // Check collision between sprites, returns Boolean
     function checkCollision(spriteA, spriteB){
-        
-        //var boundsA = spriteA.getBounds();
-        //var boundsB = spriteB.getBounds();
         
         return Phaser.Rectangle.intersects(spriteA, spriteB);
     }

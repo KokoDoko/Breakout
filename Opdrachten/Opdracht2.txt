@@ -1,0 +1,107 @@
+**********************************************************
+*** OPDRACHT 2: Balk laten bewegen met de toetsenbord! ***
+**********************************************************
+
+* Schrijf het code in de functie beweegBalk() *
+
+======================================================================
+===== A. We gaan nu kijken op welke toetsen de balk gaat bewegen =====
+======================================================================
+
+TIPS:
+
+Er zijn verschillen toetsen die we kunnen gebruiken en om kijken welke toetsen, gaan we de volgende
+code gebruiken:
+
+// Dit code reageert op de rechter pijl knop
+game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)
+
+// Dit code reageert op de linker pijl knop
+game.input.keyboard.isDown(Phaser.Keyboard.LEFT)
+
+Je kan alle knoppen van de keyboard gebruiken, zoals A, D, SPACE, enz.
+Voorbeeld: game.input.keyboard.isDown(Phaser.Keyboard.A) // Luistert naar knop A 
+
+=============================================================================
+===== B. Nu moeten we naar de toetsen luisteren en een actie uitvoeren! =====
+=============================================================================
+
+TIPS:
+
+Het stukje code heeft wel hulp nodig, want het geeft nu alleen aan dat er een toets wordt ingedrukt.
+
+Het stukje code geeft een boolean terug. Een boolean is True of False.
+* True staat voor ja, het toets wordt ingedrukt
+* False staat voor nee, het toets wordt niet ingedrukt.
+
+Om het echt goed te laten werken, moeten we een if statement gebruiken.
+
+Code:
+
+if(condition){
+    
+    // Doe iets
+}
+
+Voorbeeld:
+
+if(rechter toets wordt ingedrukt){
+    
+    Ga naar rechts
+    
+}
+
+if(linker toets wordt ingedrukt){
+    
+    Ga naar links
+}
+
+Met de bovenste code, gaat de if statement kijken of er een toets wordt ingedrukt. Als de toets
+wordt ingedrukt, dus als het een True of Ja krijgt, dan wordt het code in het statement uitgevoerd.
+
+Zelf doen:
+
+* De if statement opbouwen volgens de voorbeeld
+* De code van de toetsenbord op de goede plek zetten
+
+==================================
+===== C. Het balkje bewegen! =====
+==================================
+
+TIPS:
+
+Nu dat we naar de toetsen luisteren, kunnen we de balkje laten bewegen met de hulp van het volgende code:
+
+balk.beweeg(0);
+
+Het nummer 0 staat voor de hoeveelheid pixels de balkje moet verplaatsen. Ook gezien als snelheid.
+
+voorbeeld: balk.beweeg(5); // Het balkje verplaatst met 5 pixels.
+
+De balk moet natuurlijk links en rechts gaan. Dit kun je bepalen door een '-' achter de nummer te zetten.
+
+voorbeeld:
+* balk.beweeg(5); // Het balkje verplaatst met 5 pixels naar links.
+* balk.beweeg(-5); // Het balkje verplaatst met 5 pixels naar rechts.
+
+Zelf doen:
+
+* Zet de code in de goede statement, en dan hebben we een beweegende balk!
+
+=================
+===== EXTRA =====
+=================
+
+Het balkje gaat buiten het scherm, om dat te voorkomen kun je de volgende twee if statements gebruiken:
+
+// Dit code zorgt ervoor dat het balkje niet rechts buiten het scherm gaat
+if(balk.getX() <= (viewWidth - balk.getWidth())){
+    
+}
+
+// Dit code zorgt ervoor dat het balkje niet links buiten het scherm gaat
+if(balk.getX() >= 0){
+        
+}
+
+Probeer zo op de goede plek te zetten!

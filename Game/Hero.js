@@ -13,6 +13,12 @@ Hero.prototype.move = function(direction){
     
 };
 
+Hero.prototype.beweeg = function(speed){
+    
+    this.sprite.x += speed;
+    
+}
+
 Hero.prototype.getX = function(){ return this.sprite.x; };
 Hero.prototype.getY = function(){ return this.sprite.y; };
 Hero.prototype.getWidth = function(){ return this.sprite.width; };

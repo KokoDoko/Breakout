@@ -1,9 +1,14 @@
-var Brick = function (x, y) {
+var Brick = function (x, y, color) {
     
     this.speed = 6;
     
     // Create a new sprite (x, y, asset)
-    this.sprite = game.add.sprite(x, y, 'brick');
+    
+    if(color == "0"){ color = "groen"; }
+    if(color == "1"){ color = "blauw"; }
+    if(color == "2"){ color = "rood"; }
+    
+    this.sprite = game.add.sprite(x, y, color);
     
 };
 

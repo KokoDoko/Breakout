@@ -1,0 +1,104 @@
+**********************************
+*** OPDRACHT 4: Blokken maken! ***
+**********************************
+
+* Schrijf het code in de functie blokkenMaker() *
+
+Nu moeten blokken maken om te vernietigen!
+
+Hiervoor gaan we arrays gebruiken en nog een handige techniek!
+
+============================
+===== A. Maak een blok =====
+============================
+
+TIP:
+
+Net als opdracht 1 en 2 kun je een blok aanmaken het de volgende manier:
+
+* Maak een variabel met de naam blok.
+
+* Vul de variabel met een sprite, dit keer met:
+
+naam = new Brick(0,0,'blauw');
+
+Er is nu een 'blauw' naast de nulletjes. Dit is de kleur van de blok. Je kan kiezen tussen:
+'rood'
+'blauw'
+'groen'
+
+* Geef de blok een positie.
+
+=================================
+===== B. Maak meer blokken! =====
+=================================
+
+TIP:
+
+We willen natuurlijk meer blokken om te vernietigen, dan moeten we meer variabelen maken!
+
+De code zal ziets eruit zien:
+
+blok = new Brick(0,0,'blauw');
+blok1 = new Brick(0,0,'rood');
+blok2 = new Brick(0,0,'groen');
+
+Maar als 20 we blokken willen, dan hebben we te veel variabelen! Dan gaat de spel langzamer werken en
+de code wordt slordig. Om dit te voorkomen, gaan we gebruik maken van een Array!
+
+voorbeeld: 
+
+// een lege array
+var naam = [];
+
+// een gevulde array
+var naam = ['1', '2', 'drie'];
+
+// een array invullen / bijvullen
+naam.push('iets');
+
+of
+
+naam.push(new iets(0,0));
+
+Met de voorbeeld hierboven kun je een array met blokken maken!
+
+Zelf doen:
+
+* Verwijder de variabel en code van blok.
+* Maak een array variabel met de naam blokken.
+* Vul de array met 5 blokken.
+
+=================
+===== EXTRA =====
+=================
+
+Het is leuk om blokjes te positioneren, maar het is wel een hoop werk! Gelukkig is er een makkelijk manier
+om de blokken te maken en positioneren met de hulp van een for loop en een techniek die vaak in games wordt
+gebruikt!
+
+Kijk naar de functie blokGenerator() om te kijken hoe het werkt!
+
+Benieuwd?
+
+Zet de functie in blokMaker() en kijk hoe het werkt! Je kan de functie oproepen in de volgende manier:
+
+blokGenerator();
+
+Speel met de waarden van de blokKleur array om iets leuks te maken!
+
+Meer of minder blokken genereren? Verander de blokAmount naar wat je wil maar let op!
+Als je de blokAmount verandert, moet je ook de blokKleur array aanpassen naar de hoeveelheid
+blokken die worden gemaakt!
+
+Voorbeeld:
+
+blokAmount = 10;
+
+blokKleur = [
+    '1', '1', '1', '1', '1', '1', '1', '1',
+    '1', '1'
+];
+
+
+LET OP! Niet de andere waarden veranderen, anders gaat het allemaal mis!

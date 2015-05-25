@@ -1,0 +1,45 @@
+*********************************
+*** OPDRACHT 1: Maak een balk ***
+*********************************
+    
+* Schrijf het code in de functie maakEenBalk() *
+
+============================================================
+===== A. Maak eerst een variabel aan met de naam balk. =====
+============================================================
+
+TIPS:
+
+(Zet het boven op het document onder het kopje van variablen)
+
+voorbeeld: var naam;
+
+====================================================================================================
+===== B. Nu gaan we de variabel invullen met een sprite. We gaan de sprite 'Hero' erin zetten. =====
+====================================================================================================
+
+TIPS:
+
+voorbeeld: naam = new Hero(0, 0);
+
+De twee nulletjes zijn de posities van de balk. (0,0) = (X,Y)
+
+De posities beginnen links boven van het scherm. (Zie voorbeeld)
+
+De X wordt van Links naar rechts gelezen. voorbeeld: 0 is links on loopt tot en met 10 rechts.
+
+De Y wordt van Boven naar beneden gelezen. voorbeeld: 0 is boven en loopt tot en met 20 beneden.
+
+=============================================================
+===== C. Verplaats de balk naar een goede plek beneden. =====
+=============================================================
+
+TIPS:
+
+De maximale X en Y zijn de Breedte en Hoogte van de scherm.
+
+Maximale Breedte = 710, dus X kan tot 710 gaan
+
+Maximale Hoogte = 470, dus Y kan tot 470 gaan
+
+Als je bijvoorbeeld meer dan 710 gaat, dan zie je de balk niet meer of alleen een stuk ervan.

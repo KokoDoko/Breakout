@@ -1,0 +1,17 @@
+***************************************
+*** OPDRACHT 3: Een stuiterent bal! ***
+***************************************
+
+* Schrijf het code in de functie maakEenBal() *
+
+Nu gaan we een balletje maken die rond beweegd. Dit stuk code is al geschreven, dus je moet alleen het balletje aanmaken.
+
+Net als opdracht 1:
+
+* Maak een nieuw variabel met de naam balletje.
+
+* Vul de variabel met een sprite. Dit keer met:
+
+naam = new Ball(0,0);
+
+* Geef de ball een positie.

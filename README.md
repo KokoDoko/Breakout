@@ -1,18 +1,10 @@
 # Breakout
-A javascript-canvas game.
 
-Phaser js engine
+Een JavaScript game gemaakt met Phaser.js
 
-To-DO
+TO DO:
 
-Fix Bounce logic
-
-Fancy background photo?
-
-Powerups
-
-Win/lose condition or dialogue
-
-Clean up code
-
-simplify code for the kids
+* Opdrachten afronden. (Simple collision, punten tellen en levens).
+* Nederlandse taal en termen controleren en verbeteren.
+* Playground leeg maken voor de kinderen.
+* Uitgewerkte versie uithalen.
