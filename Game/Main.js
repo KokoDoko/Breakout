@@ -30,13 +30,13 @@ var totalMotion = 0;
      // Preload assets for further use
     function preload () {
         
-        game.load.image('logo', '/Assets/CDLogo.png');
-        game.load.image('platform', '/Assets/Platform.png');
-        game.load.image('ball', '/Assets/Ball.png');
+        game.load.image('logo', 'Assets/CDLogo.png');
+        game.load.image('platform', 'Assets/Platform.png');
+        game.load.image('ball', 'Assets/Ball.png');
          
-        game.load.image('blauw', '/Assets/Blue_brick.png');
-        game.load.image('rood', '/Assets/Red_brick.png');
-        game.load.image('groen', '/Assets/Green_brick.png');
+        game.load.image('blauw', 'Assets/Blue_brick.png');
+        game.load.image('rood', 'Assets/Red_brick.png');
+        game.load.image('groen', 'Assets/Green_brick.png');
     }
     
     // Initialize
